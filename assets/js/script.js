@@ -70,3 +70,102 @@ for (let i = 0, len = revealDelayElements.length; i < len; i++) {
 
 window.addEventListener("scroll", reveal);
 window.addEventListener("load", reveal);
+
+
+// Skills
+// add the name of each image title here
+const imageNames = ["css.svg", 
+                    "html.svg",
+                    "js.svg",
+                    "tp.svg",
+                    "php.svg",
+                    "node.svg",
+                    "firebase.svg",
+                    "react.svg", 
+                    "svelte.svg", 
+                    "tailwind.svg",
+                    "git.svg", 
+                    "github.svg", 
+                    "postman.svg",
+                    "wp.svg",
+                    "figma.svg", 
+                    "linear.svg", 
+                    "notion.svg",
+                    "slack.svg", 
+                      ];
+
+const sliderItems = imageNames.concat(imageNames);
+
+  const slider = document.getElementById("slide-track");
+
+  sliderItems.forEach((sliderItem) => {
+    const img = document.createElement("img");
+    img.src = "./assets/images/skills/" + sliderItem; //path to your folder image
+    img.className = "slide-item";
+    slider.appendChild(img);
+  });
+
+
+
+
+
+
+
+  /*  jQuery Nice Select - v1.1.0
+    https://github.com/hernansartorio/jquery-nice-select
+    Made by Hernán Sartorio  */
+ 
+    const buttons = document.querySelectorAll('.tab-buttons button');
+    const contents = document.querySelectorAll('.tab-content');
+
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            buttons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            contents.forEach(content => content.classList.remove('active'));
+            document.getElementById(button.getAttribute('data-tab')).classList.add('active');
+        });
+    });
+
+
+    // contact
+
+   
+      // Initialize EmailJS with your Public Key
+      emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your Public Key
+    
+      // Handle Form Submission
+      document.getElementById("contactForm").addEventListener("submit", function (event) {
+        event.preventDefault();
+    
+        const formMessage = document.getElementById("form-message");
+        const formData = new FormData(this);
+    
+        // Clear previous message
+        formMessage.textContent = "";
+    
+        // Show a loading message
+        formMessage.textContent = "Sending message...";
+        formMessage.style.color = "blue";
+    
+        // Send the form data to EmailJS
+        emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+          name: formData.get("name"),
+          email: formData.get("email"),
+          message: formData.get("message"),
+        })
+          .then(() => {
+            // Success message
+            formMessage.textContent = "Your message has been sent successfully!";
+            formMessage.style.color = "green";
+            this.reset(); // Reset the form fields
+          })
+          .catch((error) => {
+            // Error message
+            console.error("EmailJS Error:", error);
+            formMessage.textContent = "Failed to send message. Please try again.";
+            formMessage.style.color = "red";
+          });
+      });
+    
