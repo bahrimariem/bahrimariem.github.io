@@ -133,7 +133,7 @@ const sliderItems = imageNames.concat(imageNames);
 
    
       // Initialize EmailJS with your Public Key
-      emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your Public Key
+      emailjs.init("o-kglsybixVpLiHAa"); // Replace with your Public Key
     
       // Handle Form Submission
       document.getElementById("contactForm").addEventListener("submit", function (event) {
@@ -150,7 +150,7 @@ const sliderItems = imageNames.concat(imageNames);
         formMessage.style.color = "blue";
     
         // Send the form data to EmailJS
-        emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+        emailjs.send("service_atb1h1w", "template_jbt8urx", {
           name: formData.get("name"),
           email: formData.get("email"),
           message: formData.get("message"),
