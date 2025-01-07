@@ -2,12 +2,6 @@
   #main.css
 \*-----------------------------------*/
 
-/**
- * copyright 2022 codewithsadee
- */
-
-
-
 
 
 /*-----------------------------------*\
@@ -367,13 +361,15 @@ body.nav-active { overflow: hidden; }
 \*-----------------------------------*/
 
 .hero {
-  padding-block-start: calc(var(--section-padding) + 50px);
+  padding-block-start: calc(var(--section-padding));
+  padding-block-end: calc(var(--section-padding));
   background-color: var(--cultured);
 }
 
 .hero .container {
   display: grid;
   gap: 50px;
+  
 }
 
 .hero-banner {
@@ -695,7 +691,7 @@ textarea.input-field {
      * spacing
      */
 
-    --section-padding: 120px;
+    --section-padding: 100px;
 
   }
 
